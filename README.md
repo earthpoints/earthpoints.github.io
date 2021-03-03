@@ -1,1 +1,4 @@
-# EarthPoints.org
+# Earth Points
+
+Environmentally-Friendly Travel Rewards
+

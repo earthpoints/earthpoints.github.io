@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html;">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+
+<title>EarthPoints.org</title>
+<link type="text/css" href="https://neighborhood.org/localsite/css/base.css" rel="stylesheet" />
+<script type="text/javascript" src="https://neighborhood.org/localsite/js/d3.v5.min.js"></script>
+<script type="text/javascript" src="https://neighborhood.org/localsite/js/jquery/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://neighborhood.org/localsite/js/localsite.js"></script>
+<script type="text/javascript" src="https://neighborhood.org/localsite/js/showdown.min.js"></script>
+<script type="text/javascript" src="https://neighborhood.org/localsite/js/navigation.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+  integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+  crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+  integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+  crossorigin=""></script>
+
+
+<script>
+	param.titleArray = ["Earth","Points"]
+	param.header = "header.html"
+	param.headerLogo = "<img src='img/logo/github.png' style='width:30px; margin-right:10px'>";
+	param.headerFile = "header.html"
+</script>
+<style>
+	.upperIconsX { display: none; }
+	.markdownEye { display: none; }
+	#logoholderX { background-image: none !important; }
+	#headerSiteTitle { font-size: 16px !important; }
+	.pageColumnTitleXX { position:absolute; bottom:0px; background-color: rgba(255, 255, 255, 0.7); margin-bottom:0px;}
+	h2 { font-weight: 600; }
+</style>
+</head>
+
+<body>
+
+
+<div class="content contentpadding">
+
+  <div id="readmeDiv"></div>
+  <script>
+      loadMarkdown("README.md", "readmeDiv", "_parent");
+  </script>
+
+
+<!-- traffic map -->
+<!-- https://developers.google.com/maps/documentation/javascript/examples/layer-traffic#all -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYA3xs8qzirlMrtOYf5v7hEEq32dN79G4&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+        height: 500px;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      @media only screen and ( min-width: 980px ) {
+    .gm-style-pbc {
+    opacity: 0 !important;
+    }
+    }
+    </style>
+    <script>
+      //"use strict";
+      function initMap() {
+        const myLatLng = { lat: 33.7756, lng: -84.3963 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 14,
+          center: {
+            lat: 33.7756,
+            lng: -84.3963
+          },
+          options: {
+        gestureHandling: 'cooperative'
+      }
+        });
+        const trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(map);
+
+        new google.maps.Marker({
+          position: myLatLng,
+          map,
+          title: "Hello World!",
+        });
+
+      }
+    </script>
+    <div id="map"></div>
+<!-- /traffic map -->
+<br><br>
+
+	<div id="mapid1"></div><br>
+  <style>
+  #mapid1 { height: 380px; }
+  </style>
+  <script>
+    var mymap = L.map('mapid1').setView([33.7017, -84.3323], 13);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.satellite',
+        accessToken: 'pk.eyJ1IjoiZGF0YXBvcnRhbCIsImEiOiJjam1tOXhpeGUwZ3IyM3BtbGIwbWV1NjIxIn0.K07Nah9ZjewCR0iV4pYw_Q'
+    }).addTo(mymap);
+    mymap.scrollWheelZoom.disable();
+    var marker = L.marker([33.7017, -84.3323], { title: "Intrenchment Creek WRC" }).addTo(mymap);
+    var marker = L.marker([33.6835, -84.3629], { title: "South River WRC" }).addTo(mymap);
+  </script>
+
+
+
+
+	<div style="clear:both"></div>
+
+  <!--
+  Second Map
+  <div id="mapid2"></div><br>
+  <style>
+  #mapid2 { height: 380px; }
+  </style>
+  <script>
+    var mymap = L.map('mapid2').setView([33.6835, -84.3629], 15);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.satellite',
+        accessToken: 'pk.eyJ1IjoiZGF0YXBvcnRhbCIsImEiOiJjam1tOXhpeGUwZ3IyM3BtbGIwbWV1NjIxIn0.K07Nah9ZjewCR0iV4pYw_Q'
+    }).addTo(mymap);
+    mymap.scrollWheelZoom.disable();
+    var marker = L.marker([33.6835, -84.3629], { title: "My marker" }).addTo(mymap);
+  </script>
+  -->
+
+
+</div>
+<div style="clear:both"></div>
+
+
+
+
+<div id="footer" style="display:none"></div>
+
+<div class="content contentpadding">
+  <div style="float:left">
+    
+  </div>
+  <div style="float:right">
+	<a href="https://github.com/EarthPoints/earthpoints.github.io"><img src="img/logo/github.png" style="height:32px; margin: 0px 8px 2px 1.5px"></a>
+  </div>
+</div>
+
+
+</body>
+</html>
