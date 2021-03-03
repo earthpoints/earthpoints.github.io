@@ -1,4 +1,4 @@
 # Earth Points
 
-Environmentally-Friendly Travel Rewards
+Environmentally-Friendly Travel Rewards. Earn points based on your mode of transit.  
 
