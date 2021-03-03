@@ -1,1 +1,1 @@
-# EarthPoints
+# EarthPoints.org
