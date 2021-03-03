@@ -1,1 +1,1 @@
-# earthpoints.github.io
+# EarthPoints
