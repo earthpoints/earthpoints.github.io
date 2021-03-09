@@ -8,4 +8,5 @@ Currently, our demo has the information aspect down; we have compiled various tr
 
 ### Problem Statement
 
-16% of all greenhouse gas emissions are due to cars in the US. Currently, there is minimal incentive for Americans to diverge from this primary mode of transportation to more environmentally friendly options. Additionally, with a growing number of transportation services such as rideshare and rentable scooters, it becomes difficult for the user to find all of their options quickly and efficiently. With our app all of the data from these different services is compiled into one place for quick and easy access.
+In the US, 16% of all greenhouse gas emissions are due to cars. Currently, there is minimal incentive for Americans to diverge from this primary mode of transportation to more environmentally friendly options. Additionally, with a growing number of transportation services such as rideshare and rentable scooters, it becomes difficult for the user to find all of their options quickly and efficiently. With our app all of the data from these different services is compiled into one place for quick and easy access.
+
